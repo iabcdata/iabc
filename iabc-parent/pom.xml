@@ -31,7 +31,7 @@
         <httpasyncclient_version>4.1</httpasyncclient_version>
         <okhttp_version>2.5.0</okhttp_version>
         <retrofit_version>1.9.0</retrofit_version>
-        <httpclient.version>4.2.1</httpclient.version>
+        <httpclient_version>4.2.1</httpclient_version>
 
         <servlet_version>3.1.0</servlet_version>
         <validation_version>1.0.0.GA</validation_version>
