@@ -26,7 +26,7 @@ import io.iabc.common.exception.HttpException;
 
 /**
  * @author <a href="mailto:heshucheng@gmail.com">shuchen</a>
- *         Created on 21:37 2016年06月27日.
+ * Created on 21:37 2016年06月27日.
  */
 public class HttpUtils {
     private static Logger logger = LoggerFactory.getLogger(HttpUtils.class);
@@ -34,7 +34,7 @@ public class HttpUtils {
     private final static int SOCK_TIMEOUT = 5000;
     private final static int CONN_TIMEOUT = 5000;
     private final static RequestConfig config = RequestConfig.custom().setSocketTimeout(SOCK_TIMEOUT)
-            .setConnectTimeout(CONN_TIMEOUT).build();
+        .setConnectTimeout(CONN_TIMEOUT).build();
 
     /**
      * post a 'form like' data to http server with given url
@@ -42,7 +42,7 @@ public class HttpUtils {
      * @param url       http url
      * @param paramsMap key:value form data
      * @return Response{code,body}
-     * @throws net.heyx.common.exception.HttpException wrap any exception to HttpException :IOException
+     * @throws HttpException wrap any exception to HttpException :IOException
      *                       SocketException
      */
     public static Response post(String url, Map<String, String> paramsMap) throws HttpException {
@@ -50,7 +50,7 @@ public class HttpUtils {
         CloseableHttpClient client = HttpClients.createDefault();
 
         HttpPost method = new HttpPost(url);
-//        method.setHeader("Content-Type","application/json");
+        //        method.setHeader("Content-Type","application/json");
         method.setConfig(config);
 
         List<NameValuePair> nvps = new ArrayList<NameValuePair>(paramsMap.size());

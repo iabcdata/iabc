@@ -1,17 +1,3 @@
-/*
- * Project: dubbomm
- *
- * File Created at 2018-02-07
- *
- * Copyright 2012-2015 Greenline.com Corporation Limited.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * Greenline Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license agreement you entered into
- * with Greenline.com.
- */
 package io.iabc.tsdb.opentsdb.client.domain;
 
 import com.google.common.base.Preconditions;
@@ -180,7 +166,7 @@ public class MultiPoint implements Serializable {
 
         Point point = Point.metric("dubbo.invoke.success").timestamp(1517881145).value(2)
             .tag("application", "hrs-std-service").tag("invokeType", "provider").tag("consumer", "192.168.3.43")
-            .tag("provider", "192.168.1.64").tag("service", "com.greenline.hrs.std.rpc.share.ExpertRpcService")
+            .tag("provider", "192.168.1.64").tag("service", "io.iabc.hrs.std.rpc.share.ExpertRpcService")
             .tag("method", "list").build();
 
         System.out.println(point.jsonProtocol());
@@ -189,7 +175,7 @@ public class MultiPoint implements Serializable {
 
         Point point2 = Point.metric("dubbo.invoke.failure").timestamp(1517881145).value(1)
             .tag("application", "hrs-std-service").tag("invokeType", "provider").tag("consumer", "192.168.3.43")
-            .tag("provider", "192.168.1.64").tag("service", "com.greenline.hrs.std.rpc.share.ExpertRpcService")
+            .tag("provider", "192.168.1.64").tag("service", "io.iabc.hrs.std.rpc.share.ExpertRpcService")
             .tag("method", "list").build();
 
         System.out.println(point2.jsonProtocol());
@@ -205,7 +191,7 @@ public class MultiPoint implements Serializable {
         MultiPoint multiPoint2 = MultiPoint.getBuilder().timestamp(1517881145).field("dubbo.invoke.success", 3)
             .field("dubbo.invoke.failure", 2).tag("application", "hrs-std-service").tag("invokeType", "provider")
             .tag("consumer", "192.168.3.43").tag("provider", "192.168.1.64")
-            .tag("service", "com.greenline.hrs.std.rpc.share.ExpertRpcService").tag("method", "list").build();
+            .tag("service", "io.iabc.hrs.std.rpc.share.ExpertRpcService").tag("method", "list").build();
 
         System.out.println(multiPoint2.jsonProtocol());
         System.out.println(multiPoint2.lineProtocol());

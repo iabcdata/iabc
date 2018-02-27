@@ -27,11 +27,12 @@
         <commons-lang3_version>3.3.2</commons-lang3_version>
         <commons-beanutils_version>1.8.3</commons-beanutils_version>
         <fastjson_version>1.2.5</fastjson_version>
-        <!--<httpclient_version>4.4.1</httpclient_version>-->
+        <!--<httpclient_version>4.5</httpclient_version>-->
+        <httpclient_version>4.4.1</httpclient_version>
+        <!--<httpclient_version>4.2.1</httpclient_version>-->
         <httpasyncclient_version>4.1</httpasyncclient_version>
         <okhttp_version>2.5.0</okhttp_version>
         <retrofit_version>1.9.0</retrofit_version>
-        <httpclient_version>4.2.1</httpclient_version>
 
         <servlet_version>3.1.0</servlet_version>
         <validation_version>1.0.0.GA</validation_version>
@@ -47,7 +48,7 @@
         <cglib_version>2.2.2</cglib_version>
         <jetty_version>9.3.0.M2</jetty_version>
         <tomcat_embed_version>8.0.11</tomcat_embed_version>
-        <lombok_version>1.16.6</lombok_version>
+        <lombok_version>1.16.18</lombok_version>
         <junit_version>4.11</junit_version>
     </properties>
 
@@ -191,7 +192,7 @@
                 <scope>test</scope>
             </dependency>
             <!-- http rest client config -->
-            
+
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-mapper-asl</artifactId>
@@ -276,6 +277,7 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok_version}}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>

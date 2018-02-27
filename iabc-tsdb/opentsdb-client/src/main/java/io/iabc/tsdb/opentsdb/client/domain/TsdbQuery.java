@@ -1,17 +1,3 @@
-/*
- * Project: dubbomm
- *
- * File Created at 2018-02-05
- *
- * Copyright 2012-2015 Greenline.com Corporation Limited.
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * Greenline Company. ("Confidential Information").  You shall not
- * disclose such Confidential Information and shall use it only in
- * accordance with the terms of the license agreement you entered into
- * with Greenline.com.
- */
 package io.iabc.tsdb.opentsdb.client.domain;
 
 import com.google.common.base.Preconditions;
@@ -41,7 +27,7 @@ public class TsdbQuery implements Serializable {
     private String start;
     private String end;
     private Boolean useCalendar;
-    private List<Query> queries = new ArrayList<>();
+    private List<Query> queries = new ArrayList<Query>();
 
     /////////////////////////////// Constructors \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -73,9 +59,9 @@ public class TsdbQuery implements Serializable {
         sb.append(", \"useCalendar\":\"").append(this.useCalendar).append("\"");
 
         sb.append(", \"queries\":[");
-        this.queries.forEach(query -> {
+        for (Query query : this.queries) {
             sb.append(query.jsonProtocol()).append(",");
-        });
+        }
 
         if (!this.queries.isEmpty()) {
             sb.deleteCharAt(sb.length() - 1);
@@ -139,7 +125,7 @@ public class TsdbQuery implements Serializable {
         private String metric;
         private Boolean rate;
         private String downsample;
-        private List<Filter> filters = new ArrayList<>();
+        private List<Filter> filters = new ArrayList<Filter>();
 
         public String jsonProtocol() {
 
@@ -158,9 +144,10 @@ public class TsdbQuery implements Serializable {
             }
 
             sb.append("\"filters\":[");
-            this.filters.forEach(filter -> {
+            for (Filter filter : this.filters) {
                 sb.append(filter.jsonProtocol()).append(",");
-            });
+            }
+
             if (!this.filters.isEmpty()) {
                 sb.deleteCharAt(sb.length() - 1);
             }
@@ -226,7 +213,7 @@ public class TsdbQuery implements Serializable {
             private String metric;
             private Boolean rate;
             private String downsample;
-            private List<Filter> filters = new ArrayList<>();
+            private List<Filter> filters = new ArrayList<Filter>();
 
             QueryBuilder(String metric) {
                 Preconditions.checkArgument(!Strings.isNullOrEmpty(metric), "metric can't be null or empty");
@@ -378,7 +365,7 @@ public class TsdbQuery implements Serializable {
         private String start;
         private String end;
         private Boolean useCalendar;
-        private List<Query> queries = new ArrayList<>();
+        private List<Query> queries = new ArrayList<Query>();
         private TimeUnit precision = TimeUnit.SECONDS;
 
         TsdbQueryBuilder(String start) {

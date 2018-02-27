@@ -13,6 +13,7 @@
         <module>iabc-tsdb</module>
         <module>iabc-common</module>
         <module>iabc-portal</module>
+        <module>iabc-dubbo</module>
     </modules>
 
     <properties>
