@@ -5,6 +5,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.iabc.demo.share.common.domain.Person;
+import io.iabc.dubbo.demoa.share.dto.CookiesDTO;
 import io.iabc.dubbo.demoa.share.service.IaService;
 
 /**
@@ -45,6 +47,12 @@ public class IaServiceImpl implements IaService {
     ////////////////////////////////// Methods \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
     //------------------------ Implements: 
+    @GET
+    @Path("cookies")
+    @Override
+    public String cookies(@BeanParam CookiesDTO cookiesDTO) {
+        return cookiesDTO.toString();
+    }
 
     @GET
     @Path("echoSimple")
@@ -60,7 +68,7 @@ public class IaServiceImpl implements IaService {
         if (randomTime == null) {
             throw new NullPointerException("test:randomTime is null");
         }
-        
+
         return msg;
     }
 

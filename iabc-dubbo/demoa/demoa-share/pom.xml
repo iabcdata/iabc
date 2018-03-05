@@ -18,6 +18,15 @@
             <artifactId>share-common</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        
+        <!-- dubbo rest multiple parameter annotation satrt -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.ws.rs</groupId>
+            <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
+            <version>${jboss_jaxrs_api_version}</version>
+        </dependency>
+        <!-- dubbo rest multiple parameter annotation end -->
+        
     </dependencies>
 
     <build>

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import io.iabc.demo.share.common.domain.Person;
+import io.iabc.dubbo.demoa.share.dto.CookiesDTO;
 
 /**
  * TODO
@@ -14,6 +15,8 @@ import io.iabc.demo.share.common.domain.Person;
  * @since 2018-01-25 21:15
  */
 public interface IaService {
+
+    String cookies(CookiesDTO cookiesDTO);
 
     String echoSimple(String msg);
 
